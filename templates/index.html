@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <title>Snipbase | PennAppsX</title>
-        <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.1.0/pure-min.css">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/pure-min.css') }}">
         <script type="text/javascript" src="{{ url_for('static', filename='js/jquery.js') }}"></script>
         <script type="text/javascript">
             $(document).ready(function() {
@@ -12,8 +12,8 @@
                 });
             });
         </script>
-        <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.2/styles/monokai_sublime.min.css">
-        <script src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.2/highlight.min.js"></script>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/monokai_sublime.min.css') }}">
+        <script src="{{ url_for('static', filename='js/highlight.min.js') }}"></script>
         <script>hljs.initHighlightingOnLoad();</script>
         <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}"/>
     </head>
@@ -33,7 +33,7 @@
                 {% for snippet in snippets %}
                 <div class="leader">
                     <div class="pure-u-1-2 leader-name">{{ snippet.title }}</div>
-                    <div class="pure-u-1-2 leader-miles top">+10</div>
+                    <div class="pure-u-1-2 leader-miles top">{{ snippet.n }}</div>
                     <div class="tickets pure-u-1-1">
                         <pre>
                             <code>

@@ -8,12 +8,11 @@ app = Flask(__name__)
 
 @app.route("/")
 def index():
-    client = MongoClient('158.130.164.180')
+    client = MongoClient()
     db = client.dyna_database
     clc = db.snippets_collection
 
     snippets = [snippet for snippet in clc.find()]
-    print snippets
 
     """
     for id in db_res.keys():
